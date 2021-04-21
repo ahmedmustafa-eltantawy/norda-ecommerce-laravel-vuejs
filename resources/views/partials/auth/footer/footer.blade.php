@@ -3,4 +3,3 @@
 
 <!-- App js -->
 <script src="{{ asset('js/dashboard.min.js') }}"></script>
-@yield('script')
