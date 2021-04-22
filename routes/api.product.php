@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Product\ShopProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource( '/products', ShopProducts::class );
+Route::get( '/products/new-arrivals', [ ShopProductController::class, 'newArrivals' ] )->name('new-arrivals');
+Route::get( '/products/best-seller/{category_name}', [ ShopProductController::class, 'bestSeller' ] )->name('best-seller');
+Route::get( '/products/new-in-sales', [ ShopProductController::class, 'newInSales' ] )->name('new-in-sales');
