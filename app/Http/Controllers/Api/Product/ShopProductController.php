@@ -18,9 +18,9 @@ class ShopProductController extends Controller
         return ( new ProductRepository )->GetNewArrivals();
     }
 
-    public function bestSeller($category_name)
+    public function bestSeller()
     {
-        return;
+        return ( new ProductRepository )->GetBestSellerInCategory();
     }
 
     public function newInSales()

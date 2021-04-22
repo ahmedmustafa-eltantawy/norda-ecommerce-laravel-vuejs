@@ -6,7 +6,7 @@ interface ProductRepositoryInterface
 {
     public function GetNewArrivals(): object;
 
-    public function GetBestSellerInCategory($category_name);
+    public function GetBestSellerInCategory();
 
     public function GetLatestProuductsOnSales();
 }

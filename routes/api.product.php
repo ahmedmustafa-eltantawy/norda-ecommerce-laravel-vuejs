@@ -16,5 +16,5 @@ use App\Http\Controllers\Api\Product\ShopProductController;
 */
 
 Route::get( '/products/new-arrivals', [ ShopProductController::class, 'newArrivals' ] )->name('new-arrivals');
-Route::get( '/products/best-seller/{category_name}', [ ShopProductController::class, 'bestSeller' ] )->name('best-seller');
+Route::get( '/products/best-seller', [ ShopProductController::class, 'bestSeller' ] )->name('best-seller');
 Route::get( '/products/new-in-sales', [ ShopProductController::class, 'newInSales' ] )->name('new-in-sales');
