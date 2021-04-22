@@ -9,7 +9,7 @@ use App\Traits\Api\ApiResponseGenrator;
 use App\Http\Resources\ProductCollection;
 use App\Repositories\Product\ProductRepository;
 
-class ShopProducts extends Controller
+class ShopProductController extends Controller
 {
     use ApiResponseGenrator;
 
