@@ -27,4 +27,9 @@ class ShopProductController extends Controller
     {
         return ( new ProductRepository )->GetMostDiscountedProducts();
     }
+
+    public function shopProductsFilteration()
+    {
+        return ( new ProductRepository )->GetShopProductsWithFilteration();
+    }
 }

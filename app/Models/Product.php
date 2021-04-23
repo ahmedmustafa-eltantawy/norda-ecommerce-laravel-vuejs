@@ -38,11 +38,11 @@ class Product extends Model
         return  app( Pipeline::class )
                 ->send( Product::query() )
                 ->through( [
-                    \App\QueryFilters\Shop\Size::class,
-                    \App\QueryFilters\Shop\Color::class,
-                    \App\QueryFilters\Shop\Price::class,
-                    \App\QueryFilters\Shop\RefineBy::class,
-                    \App\QueryFilters\Shop\Category::class,
+                    \App\QueryFilter\Shop\Size::class,
+                    \App\QueryFilter\Shop\Color::class,
+                    \App\QueryFilter\Shop\Price::class,
+                    \App\QueryFilter\Shop\RefineBy::class,
+                    \App\QueryFilter\Shop\Category::class,
                 ])
                 ->thenReturn()
                 ->paginate( 12 )
