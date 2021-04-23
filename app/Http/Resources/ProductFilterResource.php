@@ -25,6 +25,7 @@ class ProductFilterResource extends JsonResource
             'colors' => explode(',', $this->colors),
             'sizes' => explode(',', $this->sizes),
             'stock_quantity' => $this->stock_q,
+            'created_at' => $this->created_at->diffforhumans()
         ];
     }
 }
