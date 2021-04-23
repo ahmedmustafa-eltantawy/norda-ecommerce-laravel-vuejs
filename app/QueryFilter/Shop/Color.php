@@ -7,7 +7,7 @@ class Color extends FilterAbstract
 {
     protected function applyFilter( $builder )
     {
-        return $builder;
+        return $builder->where('colors','LIKE', '%'.request()->color.'%' );
     }
 
 }

@@ -7,7 +7,7 @@ class Size extends FilterAbstract
 {
     protected function applyFilter( $builder )
     {
-        return $builder;
+        return $builder->where('sizes','LIKE', '%'.request()->size.'%' );
     }
 
 }

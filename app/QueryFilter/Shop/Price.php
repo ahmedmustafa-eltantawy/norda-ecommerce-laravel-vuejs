@@ -7,7 +7,7 @@ class Price extends FilterAbstract
 {
     protected function applyFilter( $builder )
     {
-        return $builder;
+        return $builder->whereBetween('price', $this->queryString() );
     }
 
 }
