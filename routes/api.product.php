@@ -18,3 +18,4 @@ use App\Http\Controllers\Api\Product\ShopProductController;
 Route::get( '/products/new-arrivals', [ ShopProductController::class, 'newArrivals' ] )->name('new-arrivals');
 Route::get( '/products/best-seller', [ ShopProductController::class, 'bestSeller' ] )->name('best-seller');
 Route::get( '/products/most-discounted', [ ShopProductController::class, 'mostDiscountedProuducts' ] )->name('most-discounted');
+Route::get( '/shop/filter-products', [ ShopProductController::class, 'shopProductsFilteration' ] )->name('shop.filter-products');
