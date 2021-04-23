@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Pipeline\Pipeline;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -26,5 +27,25 @@ class Product extends Model
     public function getDiscountedPriceAttribute($value)
     {
         return ceil($this->price * (1 - ($value / $this->price)));
+    }
+
+    /**
+     * shop page products filteration.
+     *
+     */
+    public static function shopProductsFilteration()
+    {
+        return  app( Pipeline::class )
+                ->send( Product::query() )
+                ->through( [
+                    \App\QueryFilters\Shop\Size::class,
+                    \App\QueryFilters\Shop\Color::class,
+                    \App\QueryFilters\Shop\Price::class,
+                    \App\QueryFilters\Shop\RefineBy::class,
+                    \App\QueryFilters\Shop\Category::class,
+                ])
+                ->thenReturn()
+                ->paginate( 12 )
+                ->withQueryString();
     }
 }
