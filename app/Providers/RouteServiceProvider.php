@@ -49,7 +49,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.seller.php'));
 
 
-            Route::prefix('api.products')
+            Route::prefix('api/v1')
                 ->namespace('App\\Http\\Controllers\\Api\\Product')
                 ->name('api.')
                 ->group(base_path('routes/api.product.php'));
