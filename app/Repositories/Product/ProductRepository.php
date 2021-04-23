@@ -5,6 +5,7 @@ namespace App\Repositories\Product;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductFilterCollection;
 
 class ProductRepository implements ProductRepositoryInterface
 {
@@ -47,6 +48,10 @@ class ProductRepository implements ProductRepositoryInterface
                 ->get();
 
         return new ProductCollection($most_discounted_prouducts);
+    }
 
+    public function GetShopProductsWithFilteration()
+    {
+        return new ProductFilterCollection(Product::shopProductsFilteration());
     }
 }

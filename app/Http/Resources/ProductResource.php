@@ -19,7 +19,7 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
 
-            $this->mergeWhen( $this->discounted_price> 0 , [
+            $this->mergeWhen( $this->discounted_price > 0 , [
                 'discounted_price' => $this->discounted_price,
                 'discount_percentage' => floor((1 - ($this->discounted_price / $this->price) ) * 100) . '%' ,
             ]),
