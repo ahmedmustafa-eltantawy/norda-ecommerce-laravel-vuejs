@@ -1,5 +1,7 @@
 <?php
 
+namespace App\QueryFilter\Shop;
+
 use Closure;
 use Illuminate\Support\Str;
 
@@ -19,6 +21,11 @@ abstract class FilterAbstract
     protected function filterName()
     {
         return Str::snake( class_basename( $this ) );
+    }
+
+    protected function queryString(): array
+    {
+        return explode(',', request()->{$this->filterName()});
     }
 
     protected abstract function applyFilter( $builder );
