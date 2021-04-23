@@ -23,8 +23,8 @@ class ShopProductController extends Controller
         return ( new ProductRepository )->GetBestSellerInCategory();
     }
 
-    public function newInSales()
+    public function mostDiscountedProuducts()
     {
-        return;
+        return ( new ProductRepository )->GetMostDiscountedProducts();
     }
 }

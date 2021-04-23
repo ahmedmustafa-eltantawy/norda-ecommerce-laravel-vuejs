@@ -39,8 +39,14 @@ class ProductRepository implements ProductRepositoryInterface
         return new ProductCollection($best_seller_in_category);
     }
 
-    public function GetLatestProuductsOnSales()
+    public function getMostDiscountedProducts()
     {
-        return;
+        $most_discounted_prouducts = Product::query()
+                ->orderByRaw('price - discounted_price desc')
+                ->take(3)
+                ->get();
+
+        return new ProductCollection($most_discounted_prouducts);
+
     }
 }

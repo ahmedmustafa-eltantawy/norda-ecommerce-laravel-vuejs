@@ -8,5 +8,5 @@ interface ProductRepositoryInterface
 
     public function GetBestSellerInCategory();
 
-    public function GetLatestProuductsOnSales();
+    public function getMostDiscountedProducts();
 }

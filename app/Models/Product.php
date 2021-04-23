@@ -16,4 +16,15 @@ class Product extends Model
     {
         return $this->morphToMany(Category::class, 'categorable');
     }
+
+    /**
+     * Set the discount price.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function getDiscountedPriceAttribute($value)
+    {
+        return ceil($this->price * (1 - ($value / $this->price)));
+    }
 }
