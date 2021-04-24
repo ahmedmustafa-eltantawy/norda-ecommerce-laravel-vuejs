@@ -20,6 +20,7 @@ Vue.component(
     require("./components/front/HeaderMobile.vue").default
 );
 
+// Home Components
 Vue.component(
     "the-slider",
     require("./components/front/home/TheSlider.vue").default
@@ -43,6 +44,22 @@ Vue.component(
 Vue.component(
     "latest-news",
     require("./components/front/home/LatestNews.vue").default
+);
+
+// Shop Components
+Vue.component(
+    "shop-sidebar",
+    require("./components/front/shop/ShopSidebar.vue").default
+);
+
+Vue.component(
+    "shop-single-product",
+    require("./components/front/shop/ShopSingleProduct").default
+);
+
+Vue.component(
+    "shop-pagination",
+    require("./components/front/shop/ShopPagination").default
 );
 
 const app = new Vue({
