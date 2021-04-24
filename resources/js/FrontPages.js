@@ -62,6 +62,30 @@ Vue.component(
     require("./components/front/shop/ShopPagination").default
 );
 
+// Signle Product Components
+Vue.component(
+    "single-product",
+    require("./components/front/SingleProduct/SingleProduct.vue").default
+);
+
+Vue.component(
+    "single-product-reviews-list",
+    require("./components/front/SingleProduct/SingleProductReviewsList.vue")
+        .default
+);
+
+Vue.component(
+    "single-product-reviews-form",
+    require("./components/front/SingleProduct/SingleProductReviewsForm.vue")
+        .default
+);
+
+Vue.component(
+    "single-product-related-by-category",
+    require("./components/front/SingleProduct/SingleProductRelatedByCategory.vue")
+        .default
+);
+
 const app = new Vue({
     store,
     el: "#front"
