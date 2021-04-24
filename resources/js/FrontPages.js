@@ -22,27 +22,27 @@ Vue.component(
 
 Vue.component(
     "the-slider",
-    require("./components/front/TheSlider.vue").default
+    require("./components/front/home/TheSlider.vue").default
 );
 
 Vue.component(
     "new-arrivals",
-    require("./components/front/NewArrivals.vue").default
+    require("./components/front/home/NewArrivals.vue").default
 );
 
 Vue.component(
     "best-seller",
-    require("./components/front/BestSeller.vue").default
+    require("./components/front/home/BestSeller.vue").default
 );
 
 Vue.component(
     "current-discount",
-    require("./components/front/CurrentDiscount.vue").default
+    require("./components/front/home/CurrentDiscount.vue").default
 );
 
 Vue.component(
     "latest-news",
-    require("./components/front/LatestNews.vue").default
+    require("./components/front/home/LatestNews.vue").default
 );
 
 const app = new Vue({
