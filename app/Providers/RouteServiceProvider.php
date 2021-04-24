@@ -50,6 +50,7 @@ class RouteServiceProvider extends ServiceProvider
 
 
             Route::prefix('api/v1')
+                ->middleware('api')
                 ->namespace('App\\Http\\Controllers\\Api\\Product')
                 ->name('api.')
                 ->group(base_path('routes/api.product.php'));

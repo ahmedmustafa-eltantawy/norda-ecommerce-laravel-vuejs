@@ -4,7 +4,9 @@ namespace App\Repositories\Product;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductFilterResource;
 use App\Http\Resources\ProductFilterCollection;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -53,5 +55,23 @@ class ProductRepository implements ProductRepositoryInterface
     public function GetShopProductsWithFilteration()
     {
         return new ProductFilterCollection(Product::shopProductsFilteration());
+    }
+
+    public function getRelatedProducts($product_id)
+    {
+        $product = Product::findOrFail($product_id);
+
+        $product_categories = $product->categories()->pluck('categories.id');
+
+        $product = Product::query()
+            ->with('categories')
+            ->where( 'products.id', '!=', $product_id)
+            ->whereHas( 'categories', function($query) use($product_categories){
+                $query->whereIn( 'categories.id', $product_categories);
+            })
+            ->take(4)
+            ->get();
+
+        return new ProductCollection($product);
     }
 }

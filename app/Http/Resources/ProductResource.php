@@ -18,11 +18,8 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'price' => $this->price,
-
-            $this->mergeWhen( $this->discounted_price > 0 , [
-                'discounted_price' => $this->discounted_price,
-                'discount_percentage' => floor((1 - ($this->discounted_price / $this->price) ) * 100) . '%' ,
-            ]),
+            'discounted_price' => $this->discounted_price,
+            'discount_percentage' => floor((1 - ($this->discounted_price / $this->price) ) * 100) . '%' ,
 
             $this->mergeWhen( ! \Route::is('api.best-seller') , [
                 'description' => isset($this->description) ? $this->description : '',

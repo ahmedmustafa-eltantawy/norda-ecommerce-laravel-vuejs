@@ -11,7 +11,7 @@ use App\Http\Controllers\Api\Product\ShopProductController;
 |
 | Here is where you can register Products API routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api.seller" middleware group. Enjoy building your API!
+| is assigned the "api" middleware group. Enjoy building your API!
 |
 */
 
@@ -19,3 +19,5 @@ Route::get( '/products/new-arrivals', [ ShopProductController::class, 'newArriva
 Route::get( '/products/best-seller', [ ShopProductController::class, 'bestSeller' ] )->name('best-seller');
 Route::get( '/products/most-discounted', [ ShopProductController::class, 'mostDiscountedProuducts' ] )->name('most-discounted');
 Route::get( '/shop/filter-products', [ ShopProductController::class, 'shopProductsFilteration' ] )->name('shop.filter-products');
+Route::get( '/products/{product}', [ ShopProductController::class, 'singleProduct' ] )->name('single-product');
+Route::get( '/products/{product}/related-products', [ ShopProductController::class, 'relatedProducts' ] )->name('related-products');
