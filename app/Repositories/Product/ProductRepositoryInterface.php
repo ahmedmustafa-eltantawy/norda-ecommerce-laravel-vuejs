@@ -9,4 +9,6 @@ interface ProductRepositoryInterface
     public function GetBestSellerInCategory();
 
     public function getMostDiscountedProducts();
+
+    public function getRelatedProducts($product_id);
 }

@@ -13,12 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
+Route::get('/', [ \App\Http\Controllers\Shop\ShopController::class, 'home' ])->name('shop.home');
+
+Route::get('/shop', [ \App\Http\Controllers\Shop\ShopController::class, 'shop' ])->name('shop.main');
+
+Route::get('/products/{id}', [ \App\Http\Controllers\Shop\ShopController::class, 'singleProduct' ])->name('shop.single-product');
+
+Route::middleware(['auth'])->group(function () {
+
+    // Buyer Routes
+    Route::resource('/customer', \App\Http\Controllers\Customer\CustomerController::class)
+    ->middleware(['is_customer']);
+
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Category::orderBy('id')->pluck('name', 'id');
     }
 
     /**
