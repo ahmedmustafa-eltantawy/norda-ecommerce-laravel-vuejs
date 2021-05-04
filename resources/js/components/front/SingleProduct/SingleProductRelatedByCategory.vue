@@ -1,69 +1,47 @@
 <template>
-    <div class="related-product-active">
-        <div class="product-plr-1">
-            <div class="single-product-wrap">
-                <div class="product-img product-img-zoom mb-15">
-                    <a href="product-details.html">
-                        <img src="" alt="" />
-                    </a>
-                    <div class="product-action-2 tooltip-style-2">
-                        <button title="Wishlist">
-                            <i class="icon-heart"></i>
-                        </button>
-                        <button
-                            title="Quick View"
-                            data-toggle="modal"
-                            data-target="#exampleModal"
-                        >
-                            <i class="icon-size-fullscreen icons"></i>
-                        </button>
-                        <button title="Compare">
-                            <i class="icon-refresh"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-content-wrap-2 text-center">
-                    <div class="product-rating-wrap">
-                        <div class="product-rating">
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star gray"></i>
-                        </div>
-                        <span>(2)</span>
-                    </div>
-                    <h3>
-                        <a href="product-details.html">Basic Joggin Shorts</a>
-                    </h3>
-                    <div class="product-price-2">
-                        <span>$20.50</span>
-                    </div>
-                </div>
-                <div
-                    class="product-content-wrap-2 product-content-position text-center"
-                >
-                    <div class="product-rating-wrap">
-                        <div class="product-rating">
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star"></i>
-                            <i class="icon_star gray"></i>
-                        </div>
-                        <span>(2)</span>
-                    </div>
-                    <h3>
-                        <a href="product-details.html">Basic Joggin Shorts</a>
-                    </h3>
-                    <div class="product-price-2">
-                        <span>$20.50</span>
-                    </div>
-                    <div class="pro-add-to-cart">
-                        <button title="Add to Cart">Add To Cart</button>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row">
+            <shop-single-product
+                v-for="(product, index) in relatedProducts"
+                :key="index"
+                :product="product"
+            ></shop-single-product>
         </div>
     </div>
 </template>
+
+<script>
+import axios from "axios";
+import ShopSingleProduct from "../shop/ShopSingleProduct";
+export default {
+    name: "SingleProductRelatedByCategory",
+    components: {
+        ShopSingleProduct
+    },
+    data() {
+        return {
+            id: "",
+            relatedProducts: []
+        };
+    },
+
+    methods: {
+        getId() {
+            this.id = window.location.pathname.match(/([0-9]+)$/g)[0];
+            return this.id;
+        },
+
+        loadRelatedProducts(id) {
+            axios.get(`/api/v1/products/${id}/related-products/`).then(res => {
+                this.relatedProducts = res.data.products;
+
+                console.log(this.relatedProducts);
+            });
+        }
+    },
+
+    mounted() {
+        this.loadRelatedProducts(this.getId());
+    }
+};
+</script>
