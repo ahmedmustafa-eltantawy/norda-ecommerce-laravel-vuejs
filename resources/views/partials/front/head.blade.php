@@ -10,7 +10,7 @@
     <!-- Favicon -->
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"> --}}
 
-    <link rel="stylesheet" href="{{ asset('css/front-vendor.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/front-plugins.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/front-style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front/vendor.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front/plugins.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front/style.min.css') }}">
 </head>

@@ -202,8 +202,8 @@
 </div>
 <!-- Modal end -->
 </div>
-<script src="{{ asset('js/FrontPages.js') }}"></script>
-<script src="{{ asset('js/front-vendor.min.js') }}"></script>
-<script src="{{ asset('js/front-plugins.min.js') }}"></script>
+<script src="{{ asset('js/front/FrontComponents.js') }}"></script>
+<script src="{{ asset('js/front/vendor.min.js') }}"></script>
+<script src="{{ asset('js/front/plugins.min.js') }}"></script>
 <!-- Main JS -->
-<script src="{{ asset('js/front-main.js') }}"></script>
+<script src="{{ asset('js/front/main.js') }}"></script>

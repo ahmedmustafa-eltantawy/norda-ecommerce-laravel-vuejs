@@ -10,5 +10,5 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
       <!-- Core css -->
-      <link href="{{ asset('css/dashboard.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/dashboard/main.min.css') }}" rel="stylesheet">
 </head>

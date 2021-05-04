@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/FrontPages.js": "/js/FrontPages.js",
+    "/js/front/FrontComponents.js": "/js/front/FrontComponents.js",
+    "/js/dashboard/DashboardComponents.js": "/js/dashboard/DashboardComponents.js",
     "/css/app.css": "/css/app.css"
 }

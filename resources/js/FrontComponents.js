@@ -2,7 +2,7 @@
  * We'll load Vue js and Global Components Here
  */
 import Vue from "vue";
-import store from "vuex";
+import store from "./store/index";
 
 // Components
 Vue.component(
@@ -38,7 +38,7 @@ Vue.component(
 
 Vue.component(
     "current-discount",
-    require("./components/front/home/CurrentDiscount.vue").default
+    require("./components/front/home/MostDiscounted.vue").default
 );
 
 Vue.component(
@@ -48,18 +48,8 @@ Vue.component(
 
 // Shop Components
 Vue.component(
-    "shop-sidebar",
-    require("./components/front/shop/ShopSidebar.vue").default
-);
-
-Vue.component(
-    "shop-single-product",
-    require("./components/front/shop/ShopSingleProduct").default
-);
-
-Vue.component(
-    "shop-pagination",
-    require("./components/front/shop/ShopPagination").default
+    "shop-page",
+    require("./components/front/shop/ShopPage.vue").default
 );
 
 // Signle Product Components
@@ -87,8 +77,8 @@ Vue.component(
 );
 
 const app = new Vue({
-    store,
-    el: "#front"
+    el: "#front",
+    store: store
 });
 
 window.vm = app;
