@@ -10,12 +10,22 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $with = ['reviews'];
+
     /**
      * Get all of the caetories for the Product.
      */
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorable');
+    }
+
+    /**
+     * Get all of the reviews for the Product.
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'product_id');
     }
 
     /**
