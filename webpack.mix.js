@@ -16,4 +16,6 @@ mix.js("resources/js/app.js", "public/js").sass(
     "public/css"
 );
 
-mix.js("resources/js/FrontPages.js", "public/js").vue();
+mix.js("resources/js/FrontComponents.js", "public/js/front").vue();
+
+mix.js("resources/js/DashboardComponents.js", "public/js/dashboard").vue();
