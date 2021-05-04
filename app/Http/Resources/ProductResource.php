@@ -34,6 +34,9 @@ class ProductResource extends JsonResource
                 'total_sales' => $this->total_sales
             ]),
 
+            'web_route' => route( 'single-product', $this->id ),
+
+            'reviews_avg_rate' => $this->reviews_avg_rate
         ];
     }
 }
