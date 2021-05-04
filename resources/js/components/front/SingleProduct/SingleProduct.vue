@@ -7,7 +7,9 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
-            <single-product-Details></single-product-Details>
+            <single-product-Details
+                :product-details="productDetails"
+            ></single-product-Details>
         </div>
     </div>
 </template>
@@ -16,6 +18,7 @@
 import SingleProductGallery from "./SingleProductGallery";
 import SingleProductGalleryThumbnails from "./SingleProductGalleryThumbnails";
 import SingleProductDetails from "./SingleProductDetails";
+import axios from "axios";
 export default {
     name: "SingleProduct",
     components: {
@@ -24,7 +27,28 @@ export default {
         SingleProductGalleryThumbnails
     },
     data() {
-        return {};
+        return {
+            id: "",
+            productDetails: {},
+            relatedProducts: {}
+        };
+    },
+
+    methods: {
+        getId() {
+            this.id = window.location.pathname.match(/([0-9]+)$/g)[0];
+            return this.id;
+        },
+
+        loadSingleProduct(id) {
+            axios.get(`/api/v1/products/${id}`).then(res => {
+                this.productDetails = res.data;
+            });
+        }
+    },
+
+    mounted() {
+        this.loadSingleProduct(this.getId());
     }
 };
 </script>
