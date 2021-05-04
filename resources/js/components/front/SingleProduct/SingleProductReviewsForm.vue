@@ -1,5 +1,5 @@
 <template>
-    <div class="ratting-form-wrapper">
+    <div class="ratting-form-wrapper pb-115">
         <span>Add a Review</span>
         <p>
             Your email address will not be published. Required fields are marked
