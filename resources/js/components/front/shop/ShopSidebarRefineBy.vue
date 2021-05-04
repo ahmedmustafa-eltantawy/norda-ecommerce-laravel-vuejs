@@ -5,22 +5,34 @@
             <ul>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" />
-                        <a href="#">On Sale <span>4</span> </a>
+                        <input
+                            type="checkbox"
+                            value="on_sale"
+                            v-model="refine_by"
+                        />
+                        <a href="#">On Sale</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">New <span>5</span></a>
+                        <input
+                            type="checkbox"
+                            value="new"
+                            v-model="refine_by"
+                        />
+                        <a href="#">New </a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">In Stock <span>6</span> </a>
+                        <input
+                            type="checkbox"
+                            value="in_stock"
+                            v-model="refine_by"
+                        />
+                        <a href="#">In Stock </a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
@@ -33,7 +45,15 @@
 export default {
     name: "ShopSidebarRefineBy",
     data() {
-        return {};
+        return {
+            refine_by: []
+        };
+    },
+
+    watch: {
+        refine_by(val) {
+            this.$emit("refineByChanged", val);
+        }
     }
 };
 </script>

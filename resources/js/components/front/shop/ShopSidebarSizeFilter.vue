@@ -5,29 +5,29 @@
             <ul>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">XL <span>4</span> </a>
+                        <input type="checkbox" value="xl" v-model="sizes" />
+                        <a href="#">XL</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">L <span>5</span> </a>
+                        <input type="checkbox" value="l" v-model="sizes" />
+                        <a href="#">L</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">SM <span>6</span> </a>
+                        <input type="checkbox" value="sm" v-model="sizes" />
+                        <a href="#">SM</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">XXL <span>7</span> </a>
+                        <input type="checkbox" value="xxl" v-model="sizes" />
+                        <a href="#">XXL</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
@@ -40,7 +40,15 @@
 export default {
     name: "ShopSidebarSizeFilter",
     data() {
-        return {};
+        return {
+            sizes: []
+        };
+    },
+
+    watch: {
+        sizes(val) {
+            this.$emit("sizesChanged", val);
+        }
     }
 };
 </script>

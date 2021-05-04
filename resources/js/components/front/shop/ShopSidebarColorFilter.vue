@@ -5,29 +5,49 @@
             <ul>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">Green <span>7</span> </a>
+                        <input
+                            type="checkbox"
+                            id="Green"
+                            value="Green"
+                            v-model="colors"
+                        />
+                        <a href="#">Green </a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">Cream <span>8</span> </a>
+                        <input
+                            type="checkbox"
+                            id="Cream"
+                            value="Cream"
+                            v-model="colors"
+                        />
+                        <a href="#">Cream </a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">Blue <span>9</span> </a>
+                        <input
+                            type="checkbox"
+                            id="Blue"
+                            value="Blue"
+                            v-model="colors"
+                        />
+                        <a href="#">Blue </a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
                 <li>
                     <div class="sidebar-widget-list-left">
-                        <input type="checkbox" value="" />
-                        <a href="#">Black <span>3</span> </a>
+                        <input
+                            type="checkbox"
+                            id="Black"
+                            value="Black"
+                            v-model="colors"
+                        />
+                        <a href="#">Black</a>
                         <span class="checkmark"></span>
                     </div>
                 </li>
@@ -40,7 +60,19 @@
 export default {
     name: "ShopSidebarColorFilter",
     data() {
-        return {};
-    }
+        return {
+            colors: []
+        };
+    },
+
+    methods: {},
+
+    watch: {
+        colors(val) {
+            this.$emit("colorsChanged", val);
+        }
+    },
+
+    mounted() {}
 };
 </script>
