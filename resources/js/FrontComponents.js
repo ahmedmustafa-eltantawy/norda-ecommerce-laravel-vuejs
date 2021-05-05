@@ -2,7 +2,6 @@
  * We'll load Vue js and Global Components Here
  */
 import Vue from "vue";
-import store from "./store/index";
 
 // Components
 Vue.component(
@@ -77,8 +76,7 @@ Vue.component(
 );
 
 const app = new Vue({
-    el: "#front",
-    store: store
+    el: "#front"
 });
 
 window.vm = app;
