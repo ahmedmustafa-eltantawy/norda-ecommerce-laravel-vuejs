@@ -36149,33 +36149,30 @@ var __webpack_exports__ = {};
   !*** ./resources/js/FrontComponents.js ***!
   \*****************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './store/index'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /**
  * We'll load Vue js and Global Components Here
  */
-
  // Components
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("the-header", __webpack_require__(/*! ./components/front/TheHeader.vue */ "./resources/js/components/front/TheHeader.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("the-sidebar", __webpack_require__(/*! ./components/front/TheSidebar.vue */ "./resources/js/components/front/TheSidebar.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("the-header-mobile", __webpack_require__(/*! ./components/front/HeaderMobile.vue */ "./resources/js/components/front/HeaderMobile.vue").default); // Home Components
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("the-header", __webpack_require__(/*! ./components/front/TheHeader.vue */ "./resources/js/components/front/TheHeader.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("the-sidebar", __webpack_require__(/*! ./components/front/TheSidebar.vue */ "./resources/js/components/front/TheSidebar.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("the-header-mobile", __webpack_require__(/*! ./components/front/HeaderMobile.vue */ "./resources/js/components/front/HeaderMobile.vue").default); // Home Components
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("the-slider", __webpack_require__(/*! ./components/front/home/TheSlider.vue */ "./resources/js/components/front/home/TheSlider.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("new-arrivals", __webpack_require__(/*! ./components/front/home/NewArrivals.vue */ "./resources/js/components/front/home/NewArrivals.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("best-seller", __webpack_require__(/*! ./components/front/home/BestSeller.vue */ "./resources/js/components/front/home/BestSeller.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("current-discount", __webpack_require__(/*! ./components/front/home/MostDiscounted.vue */ "./resources/js/components/front/home/MostDiscounted.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("latest-news", __webpack_require__(/*! ./components/front/home/LatestNews.vue */ "./resources/js/components/front/home/LatestNews.vue").default); // Shop Components
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("the-slider", __webpack_require__(/*! ./components/front/home/TheSlider.vue */ "./resources/js/components/front/home/TheSlider.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("new-arrivals", __webpack_require__(/*! ./components/front/home/NewArrivals.vue */ "./resources/js/components/front/home/NewArrivals.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("best-seller", __webpack_require__(/*! ./components/front/home/BestSeller.vue */ "./resources/js/components/front/home/BestSeller.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("current-discount", __webpack_require__(/*! ./components/front/home/MostDiscounted.vue */ "./resources/js/components/front/home/MostDiscounted.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("latest-news", __webpack_require__(/*! ./components/front/home/LatestNews.vue */ "./resources/js/components/front/home/LatestNews.vue").default); // Shop Components
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("shop-page", __webpack_require__(/*! ./components/front/shop/ShopPage.vue */ "./resources/js/components/front/shop/ShopPage.vue").default); // Signle Product Components
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("shop-page", __webpack_require__(/*! ./components/front/shop/ShopPage.vue */ "./resources/js/components/front/shop/ShopPage.vue").default); // Signle Product Components
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("single-product", __webpack_require__(/*! ./components/front/SingleProduct/SingleProduct.vue */ "./resources/js/components/front/SingleProduct/SingleProduct.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("single-product-reviews-list", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductReviewsList.vue */ "./resources/js/components/front/SingleProduct/SingleProductReviewsList.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("single-product-reviews-form", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductReviewsForm.vue */ "./resources/js/components/front/SingleProduct/SingleProductReviewsForm.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component("single-product-related-by-category", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductRelatedByCategory.vue */ "./resources/js/components/front/SingleProduct/SingleProductRelatedByCategory.vue").default);
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
-  el: "#front",
-  store: Object(function webpackMissingModule() { var e = new Error("Cannot find module './store/index'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("single-product", __webpack_require__(/*! ./components/front/SingleProduct/SingleProduct.vue */ "./resources/js/components/front/SingleProduct/SingleProduct.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("single-product-reviews-list", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductReviewsList.vue */ "./resources/js/components/front/SingleProduct/SingleProductReviewsList.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("single-product-reviews-form", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductReviewsForm.vue */ "./resources/js/components/front/SingleProduct/SingleProductReviewsForm.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("single-product-related-by-category", __webpack_require__(/*! ./components/front/SingleProduct/SingleProductRelatedByCategory.vue */ "./resources/js/components/front/SingleProduct/SingleProductRelatedByCategory.vue").default);
+var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#front"
 });
 window.vm = app;
 })();
